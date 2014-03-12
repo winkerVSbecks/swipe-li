@@ -1,0 +1,56 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Swipe-Li Demo</title>
+    <meta name="description" content="">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/example/css/styles.css">
+    <link rel="stylesheet" href="/src/swipe-li.css">
+    <!-- endstyles -->
+      
+  </head>
+  
+  <body ng-app="swipeLiDemo">
+
+    <div class="container" ng-controller="MainCtrl">
+
+      <h1>Angular Swipe-Li Demo</h1>
+
+      <div ng-repeat="item in list">
+
+        <div 
+          swipe-li
+          class="item"
+          disabled=""
+          intent="false"
+          accept="done(item)"
+          reject="skip(item)"
+          main-content="'/example/sample-content.html'"
+          accept-content="'/example/accept-content.html'"
+          reject-content="'/example/reject-content.html'"
+          reset-to-content="false"
+          ng-class="{invert: item.doInvert}"
+        ></div>
+
+      </div>
+    </div>
+
+    <!-- Dependencies -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/hammerjs/hammer.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endDependencies -->
+
+    <!-- Scripts -->
+    <script src="/src/angular-swipe-li.js"></script>
+    <script src="/src/hammer-remote.js"></script>
+    <script src="/src/swipe-li.js"></script>
+    <script src="/src/optimize-animation.js"></script>
+    <script src="/example/app.js"></script>
+    <!-- endscripts -->
+</body>
+</html>
