@@ -1,0 +1,58 @@
+.swipe-li{
+  overflow: hidden;
+  width:100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+      -webkit-transform-style: preserve-3d;
+            -webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+}
+
+.swipe-li ul{
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  -webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
+     -moz-transform: translate3d(0%,0,0) scale3d(1,1,1);
+      -ms-transform: translate3d(0%,0,0) scale3d(1,1,1);
+       -o-transform: translate3d(0%,0,0) scale3d(1,1,1);
+          transform: translate3d(0%,0,0) scale3d(1,1,1);
+  -webkit-backface-visibility: hidden;
+      -webkit-transform-style: preserve-3d;
+}
+
+.swipe-li ul.animate{
+  -webkit-transition: all .3s;
+     -moz-transition: all .3s;
+       -o-transition: all .3s;
+          transition: all .3s;
+}
+
+.swipe-li ul li{
+  float: left;
+  overflow: hidden;
+  width: 100%;
+  -webkit-transform-style: preserve-3d;
+        -webkit-transform: translate3d(0,0,0);
+}
+
+.swipe-li ul li.pane{
+  font-size: 30px;
+  text-align: center;
+  height: 58px;
+  line-height: 58px;
+  overflow: hidden;
+}
+
+.swipe-li ul li.pane.reject{
+  background: #DA5B3D;
+  color: #b13d22;
+}
+
+.swipe-li ul li.pane.accept{
+  background: #7CDD90;
+  color: #46cf62;
+}

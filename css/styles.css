@@ -3,6 +3,16 @@
 html { width: 100%; padding: 0; margin: 0; }
 body { font-family: 'Lato', sans-serif; }
 h1 { font-family: 'Vollkorn', serif; }
+h1 small { color: #bdc3c7; font-size: 16px; }
+h1 a {
+  color: #95A5A6;
+  float: right;
+  font-size: 16px;
+  text-decoration: none;
+}
+h1 a:hover {
+  border-bottom: 1px solid;
+}
 
 .container { max-width: 640px; margin: 60px auto; }
 
@@ -20,7 +30,7 @@ h1 { font-family: 'Vollkorn', serif; }
   color: #95A5A6;
 }
 
-.item { margin-bottom: 20px; }
+.item { margin-bottom: 20px; cursor: col-resize; }
 
 .invert .swipe-li ul li.pane.reject { background: #fff; color: #DA5B3D; }
 .invert .swipe-li ul li.pane.accept { background: #fff; color: #7CDD90; }
@@ -38,13 +48,13 @@ h1 { font-family: 'Vollkorn', serif; }
   font-style: normal;
 }
 
- 
+
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
