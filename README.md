@@ -1,6 +1,8 @@
 Swipe-li
 ==============
 
+![](swipe-li.gif)
+
 A three pane swipeable element. Swipe right for accept. Swipe left for reject. (AngularJS directive)
 
 [Live Demo](http://winkerVSbecks.github.io/swipe-li)
@@ -28,8 +30,8 @@ bower_components/modernizr/modernizr.js
 bower_components/angular/angular.js
 bower_components/hammerjs/hammer.js
 bower_components/angular-touch/angular-touch.js
-swipe-li/swipe-li.css
-swipe-li.min.js
+bower_components/dist/swipe-li.css
+bower_components/dist/swipe-li.min.js
 ```
 
 You then need to declare a dependency on the `swipeLi` module:
