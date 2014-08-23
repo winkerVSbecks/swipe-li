@@ -3,7 +3,9 @@ Swipe-li
 
 A three pane swipeable element. Swipe right for accept. Swipe left for reject. (AngularJS directive)
 
-[demo](http://winkerVSbecks.github.io/swipe-li)
+[Live Demo](http://winkerVSbecks.github.io/swipe-li)
+
+The code is largely based on the hammer.js carousel demo.
 
 
 ## Dependencies
