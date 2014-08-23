@@ -1,21 +1,20 @@
-'use strict';
-
 /*
   ------------------------
    	SWIPE LI DIRECTIVE
   ------------------------
-	Creates a 3 pane swipeable element. 
+	Creates a 3 pane swipeable element.
 	Swipe right for accept. Swipe left for reject.
 
-	Be sure to include optimize-animation.js to handle 
+	Be sure to include optimize-animation.js to handle
 	requestAnimationFrame and cancel polyfill
 */
 
-angular.module('angularSwipeLi')
+angular.module('swipeLi')
   .directive('swipeLi', ['hammerRemote', '$timeout', function (hammerRemote, $timeout) {
+  	'use strict';
     return {
       restrict: 'A',
-      template: 
+      template:
 	      	'<div class="swipe-li">'
 	      + 	'<ul>'
 	    	+			'<li class="pane accept">'
@@ -75,7 +74,7 @@ angular.module('angularSwipeLi')
 			    });
 			    container.width(pane_width * pane_count);
 			  };
- 
+
 			  // Show pane by index
 			  scope.showPane = function (index, animate) {
 			    // between the bounds
@@ -157,16 +156,16 @@ angular.module('angularSwipeLi')
 
 				// Register a new hammer instance
 				scope.id = hammerRemote.register(
-					element[0], 
+					element[0],
 					{ drag_lock_to_axis: true });
-				
+
 				// Init the carousel
 				hammerRemote.getHammer(scope.id)
 					.then(function (hammertime) {
 						hammertime.on('release dragleft dragright swipeleft swiperight', scope.handleHammer);
 						scope.init();
 					});
-				
+
 				// Handle destroy for hammer
         scope.$on('$destroy', function () {
           hammerRemote.unregister(scope.id);
