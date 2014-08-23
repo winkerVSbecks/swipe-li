@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('swipeLiDemo', [
-  'angularSwipeLi'
+  'swipeLi'
 ])
   .controller('MainCtrl', ['$scope', function ($scope) {
 

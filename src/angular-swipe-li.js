@@ -1,1 +1,1 @@
-angular.module('angularSwipeLi', []);
+angular.module('swipeLi', []);

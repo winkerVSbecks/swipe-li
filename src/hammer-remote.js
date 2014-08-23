@@ -1,16 +1,16 @@
-'use strict';
-
-angular.module('angularSwipeLi')
+angular.module('swipeLi')
   .provider('hammerRemote', function HammerRemoteProvider() {
+
+    'use strict';
 
     var self = this;
     this.globalOptions = {};
 
     this.$get = ['$q', function($q) {
 
-      var hammerStore = { count: 0 }, 
-          exports = {}, 
-          initStoreForId, 
+      var hammerStore = { count: 0 },
+          exports = {},
+          initStoreForId,
           resolveInStoreById,
           baseId = '__HAMMER_ID_'
 
