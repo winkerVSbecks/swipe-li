@@ -9,6 +9,8 @@ A three pane swipeable element. Swipe right for accept. Swipe left for reject. (
 
 The code is largely based on the hammer.js carousel demo.
 
+Developed at [rangle.io](http://rangle.io)
+
 
 ## Dependencies
 
