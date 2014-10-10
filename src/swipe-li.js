@@ -10,7 +10,7 @@
 */
 
 angular.module('swipeLi')
-  .directive('swipeLi', ['hammerRemote', '$timeout', function (hammerRemote, $timeout) {
+  .directive('swipeLi', ['hammerRemote', '$timeout', '$window', function (hammerRemote, $timeout, $window) {
   	'use strict';
     return {
       restrict: 'A',
@@ -50,8 +50,8 @@ angular.module('swipeLi')
       	// Basic 3 Pane Carousel
 				// animation between panes happens with css transitions
 			  var element = iElement.find('div');
-			  var container = $('>ul', element);
-			  var panes = $('>ul>li', element);
+			  var container = iElement.find('ul');
+			  var panes = iElement.find('li');
 			  var pane_width = 0;
 			  var pane_count = 3;
 			  var current_pane = 0;
@@ -61,18 +61,18 @@ angular.module('swipeLi')
 			    // Display the content pane by default
 			    scope.showPane(1, false);
 			    // Handle resize and orientation change
-			    $(window).on('load resize orientationchange', function () {
+			    angular.element($window).on('load resize orientationchange', function () {
 			      setPaneDimensions();
 			    });
 			  };
 
 			  // Set the pane dimensions and scale the container
 			  function setPaneDimensions() {
-			    pane_width = element.width();
-			    panes.each(function () {
-			      $(this).width(pane_width);
+			    var pane_width = element[0].offsetWidth;
+			    angular.forEach(panes, function (pane) {
+			      angular.element(pane).css({width : pane_width + 'px'});
 			    });
-			    container.width(pane_width * pane_count);
+			    angular.element(container).css({width : pane_width * pane_count + 'px'});
 			  };
 
 			  // Show pane by index
