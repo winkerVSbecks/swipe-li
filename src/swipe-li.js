@@ -68,7 +68,7 @@ angular.module('swipeLi')
 
 			  // Set the pane dimensions and scale the container
 			  function setPaneDimensions() {
-			    var pane_width = element[0].offsetWidth;
+			    pane_width = element[0].offsetWidth;
 			    angular.forEach(panes, function (pane) {
 			      angular.element(pane).css({width : pane_width + 'px'});
 			    });
