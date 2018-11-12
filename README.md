@@ -63,6 +63,7 @@ You then need to declare a dependency on the `swipeLi` module:
 - `main-content`: template for the start pane.
 - `accept-content`: template for the accept pane.
 - `reject-content`: template for the reject pane.
+- `set-to-pane-index`: index of initial pane to display (acceptable values: 0,1,2, default: 1).
 - `reset-to-content`: should the swiped pane reset back to start pane on complete
 
 

@@ -38,6 +38,12 @@ angular.module('swipeLi')
       	// Swipe intent
       	scope.intent = scope.$eval(iAttrs.intent);
 
+      	//use setToPaneIndex to set the initial display pane
+      	scope.setToPaneIndex = scope.$eval(iAttrs.setToPaneIndex);
+      	if ([0,1,2].indexOf(scope.setToPaneIndex) == -1) {
+      		scope.setToPaneIndex = 1
+      	}
+
 				// On swipe complete
 				scope.onComplete = function (type) {
 					$timeout(function () {
@@ -58,8 +64,10 @@ angular.module('swipeLi')
 
 			  scope.init = function () {
 			    setPaneDimensions();
-			    // Display the content pane by default
-			    scope.showPane(1, false);
+			    
+			    // Display the pane using provided pane index, if no value then display content pane
+			    scope.showPane(scope.setToPaneIndex, false);
+
 			    // Handle resize and orientation change
 			    angular.element($window).on('load resize orientationchange', function () {
 			      setPaneDimensions();
